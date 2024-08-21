@@ -2,6 +2,30 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+import localFont from "@next/font/local";
+
+const satoshi = localFont({
+  src: [
+    {
+      path: "../public/fonts/Satoshi-Light.woff",
+      weight: "300",
+    },
+    {
+      path: "../public/fonts/Satoshi-Regular.woff",
+      weight: "400",
+    },
+    {
+      path: "../public/fonts/Satoshi-Medium.woff",
+      weight: "500",
+    },
+    {
+      path: "../public/fonts/Satoshi-Bold.woff",
+      weight: "700",
+    },
+  ],
+  variable: "--font-satoshi",
+});
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${satoshi.variable} font-sans`}>{children}</body>
     </html>
   );
 }
