@@ -93,7 +93,7 @@ const ExpenseTable = () => {
         </TableHeader>
         <TableBody>
           {expenses.map((expense: any) => (
-            <TableRow>
+            <TableRow key={expense.id}>
               <TableCell className="font-medium">
                 {expense.date.substring(5, 7)}/{expense.date.substring(8, 10)}/
                 {expense.date.substring(0, 4)}
